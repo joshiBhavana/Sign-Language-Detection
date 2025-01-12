@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SignSpeak - Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="https://pyscript.net/alpha/pyscript.js"></script>
+</head>
+<body>
+    <div class="dashboard">
+        <aside class="sidebar">
+            <div class="sidebar-logo" onclick="navigate('overview')">SignSpeak</div>
+            <ul class="sidebar-nav">
+                <li><a href="#" class="active" data-section="overview">Home</a></li>
+                <li><a href="#" data-section="users">Detection Window</a></li>
+                <li><a href="#" data-section="analytics">About Sign Language</a></li>
+                <li><a href="#" data-section="settings">Settings</a></li>
+            </ul>
+        </aside>
+        <main class="main-content">
+            <section id="overview" class="dashboard-section active">
+                <div class="dashboard-header">
+                    <h1>Welcome to SignSpeak</h1>
+                </div>
+                <div class="about-section">
+                    <h1>About SignSpeak</h1>
+                    <p>SignSpeak is a web-based platform designed to bridge communication gaps between the deaf and hearing communities. Through innovative technology, we empower individuals to learn, translate, and communicate using sign language.</p>
+            
+                    <!-- Platform Features -->
+                    <h2>Key Features</h2>
+                    <ul>
+                        <li><strong>Real-time Sign Language Detection:</strong> Utilize our advanced sign language recognition system, built using computer vision and machine learning, to detect hand gestures in real-time.</li>
+                        <li><strong>Text-to-Speech Output:</strong> Convert sign language inputs into speech, making communication even more efficient for everyone, regardless of their background.</li>
+                        <li><strong>Multilingual Support:</strong> Our platform supports a wide variety of sign languages, enabling diverse users to communicate seamlessly.</li>
+                        <li><strong>Interactive Learning Resources:</strong> Get access to tutorials and courses that help individuals learn sign language with ease through interactive content.</li>
+                    </ul>
+            
+                    <!-- How it Works Section -->
+                    <h2>How It Works</h2>
+                    <p>SignSpeak uses cutting-edge computer vision technologies, such as OpenCV and TensorFlow, to recognize hand gestures and interpret them as letters, words, and even sentences. By using the camera from your device, you can communicate with others, whether you're learning the language or trying to break barriers in your daily communications.</p>
+            
+                    <!-- Team Section -->
+                    <h2>Meet the Team</h2>
+                    <p>SignSpeak was created by a dedicated team of professionals in the field of artificial intelligence, machine learning, and sign language education. Our goal is to make communication accessible to all.</p>
+            
+                    <div class="team-container">
+                        <div class="team-member">
+                            <img src="team_member_1.jpg" alt="Team Member 1">
+                            <h4>John Doe</h4>
+                            <p>AI Developer - Lead Developer of SignSpeak's Machine Learning Model</p>
+                        </div>
+                        <div class="team-member">
+                            <img src="team_member_2.jpg" alt="Team Member 2">
+                            <h4>Jane Smith</h4>
+                            <p>Product Manager - Overseeing Product Features and User Experience</p>
+                        </div>
+                        <div class="team-member">
+                            <img src="team_member_3.jpg" alt="Team Member 3">
+                            <h4>Mary Johnson</h4>
+                            <p>Sign Language Specialist - Expertise in Sign Language Education</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="users" class="dashboard-section" style="display: none;">
+                <div class="dashboard-header">
+                    <h1>Detection Window</h1>
+                </div>
+                <button class="btn" onclick="startDetection()">Start Detection</button>
+            </section>
+
+            <section id="analytics" class="dashboard-section" style="display: none;">
+                <div class="dashboard-header">
+                    <h1>About Sign Language</h1>
+                </div>
+                <div class="content">
+                    <h1>What is American Sign Language?</h1>
+            
+                    <div class="point-container">
+                        <h2>Visual Language</h2>
+                        <p>ASL is a visual language that uses hand shapes, facial expressions, and body movements to convey meaning, making it unique from spoken languages.</p>
+                    </div>
+            
+                    <div class="point-container">
+                        <h2>Facial Expressions & Non-Manual Signals</h2>
+                        <p>Facial expressions and body posture play a significant role in ASL, providing important context and meaning to signs.</p>
+                    </div>
+            
+                    <div class="point-container">
+                        <h2>Unique Grammar & Word Order</h2>
+                        <p>ASL has its own grammar, using a topic-comment structure where the topic is presented first, followed by commentary about it.</p>
+                    </div>
+            
+                    <div class="point-container">
+                        <h2>Rich Vocabulary</h2>
+                        <p>ASL has an extensive vocabulary of signs, some of which are unique and have no direct English equivalents.</p>
+                    </div>
+            
+                    <div class="point-container">
+                        <h2>Cultural Significance</h2>
+                        <p>ASL is not just a language, but an integral part of Deaf culture, identity, and community.</p>
+                    </div>
+            
+                    <h1>History of ASL</h1>
+                    <div class="card">
+                        <p>American Sign Language has evolved over hundreds of years, shaped by various regional and educational influences. It originated from local sign languages and was heavily influenced by French Sign Language due to the early Deaf education system.</p>
+                    </div>
+            
+                    <h1>Learning ASL</h1>
+                    <div class="card show-card">
+                        <p>Learning ASL can increase communication with the Deaf community and help break down language barriers in many settings, from personal to professional. It's a skill that is becoming increasingly relevant for everyone!</p>
+                    </div>
+                    <h1>ASL Signs</h1>
+                    <div class="card show-card1">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSrSAyio0t9KoJ99OgM19myxEcO54mIYhsDsg&s" alt="ASL Signs" style="max-width: 100%; border-radius: 10px;">
+                    </div>
+                </div>
+            </section>
+
+            <section id="settings" class="dashboard-section" style="display: none;">
+            <div class="dashboard-header">
+                <h1>Account Settings</h1>
+            </div>
+            
+            <!-- Theme and Layout Settings -->
+            <div class="dashboard-card">
+                <h2 class="card-title">Theme and Layout Settings</h2>
+                <!-- Dark Mode Toggle -->
+                <div class="form-group">
+                    <label for="darkModeToggle">Dark Mode</label>
+                    <input type="checkbox" id="darkModeToggle" />
+                </div>
+
+                <!-- Font Size Selection -->
+                <div class="form-group">
+                    <label for="fontSize">Font Size:</label>
+                    <select id="fontSize">
+                        <option value="small">Small</option>
+                        <option value="medium" selected>Medium</option>
+                        <option value="large">Large</option>
+                    </select>
+                </div>
+
+            </div>
+        </section>
+
+        <script>
+            // Handle Dark Mode Toggle
+            document.getElementById('darkModeToggle').addEventListener('change', function () {
+                const isDarkMode = this.checked;
+                document.body.classList.toggle('dark-theme', isDarkMode);
+                localStorage.setItem('theme', isDarkMode ? 'dark' : 'light');
+            });
+
+            // Apply Saved Theme on Page Load
+            window.addEventListener('load', function () {
+                const savedTheme = localStorage.getItem('theme');
+                if (savedTheme === 'dark') {
+                    document.body.classList.add('dark-theme');
+                    document.getElementById('darkModeToggle').checked = true;
+                }
+            });
+
+            // Handle Font Size Change
+            document.getElementById('fontSize').addEventListener('change', function () {
+                const fontSize = this.value;
+                document.documentElement.style.fontSize = fontSize === 'small' ? '14px' :
+                                                        fontSize === 'medium' ? '16px' : '18px';
+                localStorage.setItem('fontSize', fontSize);
+            });
+
+            // Apply Saved Font Size on Page Load
+            window.addEventListener('load', function () {
+                const savedFontSize = localStorage.getItem('fontSize');
+                if (savedFontSize) {
+                    document.documentElement.style.fontSize = savedFontSize === 'small' ? '14px' :
+                                                            savedFontSize === 'medium' ? '16px' : '18px';
+                    document.getElementById('fontSize').value = savedFontSize;
+                }
+            });
+        </script>
+        </main>
+    </div>
+
+    <script>
+
+        // Navigation Handler
+        function navigate(sectionId) {
+            // Hide all sections
+            document.querySelectorAll('.dashboard-section').forEach(section => {
+                section.style.display = 'none';
+            });
+
+            // Remove active class from all nav links
+            document.querySelectorAll('.sidebar-nav a').forEach(link => {
+                link.classList.remove('active');
+            });
+
+            // Show selected section
+            document.getElementById(sectionId).style.display = 'block';
+
+            // Add active class to selected nav link
+            document.querySelector(sidebar-nav, a[data-section]="${sectionId}").classList.add('active');
+        }
+
+        // Add click event listeners to sidebar navigation
+        document.querySelectorAll('.sidebar-nav a').forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const sectionId = e.target.getAttribute('data-section');
+                navigate(sectionId);
+            });
+        });
+        function startDetection() {
+            // Send a request to the mediator backend
+            fetch('http://127.0.0.1:5000')
+                .then(response => response.json())
+                .then(data => {
+                    // Display the result from the backend
+                    document.getElementById("result").innerText = data.message;
+                    console.log("Output:", data.output);
+                })
+                .catch(error => console.error('Error:', error));
+        }
+
+    </script>
+</body>
+</html>
