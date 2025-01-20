@@ -128,13 +128,12 @@ The model translates known gestures into words. we have used pyttsx3 library to 
 recognized words into the appropriate speech. The text-to-speech output is a simple 
 workaround, but it's a useful feature because it simulates a real-life dialogue.
 
-![Image](https://github.com/user-attachments/assets/454023c4-b1a8-4950-a3cd-21bc987f6d0a)
-
 ## Conclusion
 Finally, we are able to predict any alphabet[a-z] with 88% Accuracy (with and without clean 
 background and proper lightning conditions) through our method. And if the background is 
 clear and there is good lightning condition then we got even above 90% accurate results. In 
 Future work we will make one android application in which we implement this algorithm for 
 gesture predictions. 
- 
+
+![Image](https://github.com/user-attachments/assets/454023c4-b1a8-4950-a3cd-21bc987f6d0a)
  
