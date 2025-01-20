@@ -128,7 +128,7 @@ The model translates known gestures into words. we have used pyttsx3 library to 
 recognized words into the appropriate speech. The text-to-speech output is a simple 
 workaround, but it's a useful feature because it simulates a real-life dialogue.
 
-![alt text](http://url/to/img.png)
+![Image](https://github.com/user-attachments/assets/454023c4-b1a8-4950-a3cd-21bc987f6d0a)
 
 ## Conclusion
 Finally, we are able to predict any alphabet[a-z] with 88% Accuracy (with and without clean 
