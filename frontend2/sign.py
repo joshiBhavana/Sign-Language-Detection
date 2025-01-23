@@ -4,10 +4,10 @@ import subprocess
 app = Flask(__name__)
 
 @app.route('/', methods=['GET'])
-def start_detection():
+def startDetection():
     try:
         # Run final_pred.py and capture the output
-        result = subprocess.run(['python', 'final_pred.py'], capture_output=True, text=True)
+        result = subprocess.run(['python', 'D:\\Sign-Lang-to-text&audio-conversion\\Files\\final_pred.py'], capture_output=True, text=True)
         
         # Return a valid JSON response
         return jsonify({"message": "Detection started successfully!", "output": result.stdout})
